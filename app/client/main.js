@@ -43,7 +43,6 @@ Accounts.ui.config({
   extraSignupFields: []
 });
 
-
 /* Manage drawers */
 Template.header.events({
   'click .drawer-toggle': function (e) {
@@ -87,3 +86,10 @@ Deps.autorun(function () {
   var currentRoom = Session.get('room');
   hideDrawers();
 })
+
+/* Init video chat */
+$(document).ready(function () {
+  VideoChat.init({
+    'socketUrl': '//localhost:8080'
+  });
+});
