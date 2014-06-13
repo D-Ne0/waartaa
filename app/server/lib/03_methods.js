@@ -608,5 +608,12 @@ Meteor.methods({
     } else {
       return false;
     }
+  },
+  // Enable/Disable video chat
+  enable_video_chat: function (enable) {
+    Meteor.users.update(
+        Meteor.userId(),
+        {$set: {allowVideoChat: enable}}
+    );
   }
 });

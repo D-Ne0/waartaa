@@ -59,6 +59,11 @@ Router.map(function () {
             }
         },
     ],
+    waitOn: function () {
+      return [
+        Meteor.subscribe('user')
+      ]
+    }
   });
 
   this.route('chat', {
