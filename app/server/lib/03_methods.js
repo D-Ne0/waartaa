@@ -596,5 +596,9 @@ Meteor.methods({
       sort: queryOptions['sort']
     }
     return result;
+  },
+  // delete user server
+  deleteUserServer: function (id) {
+    UserServers.remove({_id: id}, true);
   }
 });
