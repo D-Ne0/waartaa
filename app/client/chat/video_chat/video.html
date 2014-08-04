@@ -1,17 +1,37 @@
 <template name="video_chat">
   <div id="video-chat-container">
-    <div id="self-video-container" style="display:none;">
-      <video id="self-video" class="video-screen" autoplay></video>
-      <div id="self-username" class="video-user channel-user">{{showLocalUsername}}</div>
-      <div style="margin-left:5px; margin-top:10px;">
-        <input type="checkbox" id="enable-camera" {{isCameraEnabled}}>
-        <label for="enable-camera">Camera</label>
+    <div class="col-md-9">
+      <div id="remote-video-container" style="">
+        <video id="remote-video" class="video-screen" autoplay></video>
+        <div id="remote-username" class="video-user channel-user">{{showRemoteUsername}}</div>
       </div>
-      {{ showHangupButton }}
+      <div style="clear:both"></div>
     </div>
-    <div id="remote-video-container" style="display:none;">
-      <video id="remote-video" class="video-screen" autoplay></video>
-      <div id="remote-username" class="video-user channel-user">{{showRemoteUsername}}</div>
+    <div class="col-md-3">
+      <div id="self-video-container" style="">
+        <video id="self-video" class="video-screen" autoplay></video>
+        <div id="self-username" class="video-user channel-user">{{showLocalUsername}}</div>
+        <div style="margin-left:5px; margin-top:10px;">
+          <input type="checkbox" id="enable-camera" {{isCameraEnabled}}>
+          <label for="enable-camera">Camera</label>
+        </div>
+        {{ showHangupButton }}
+      </div>
+      <div style="clear:both"></div>
+      <div id="video-chat-text-chat" class="panel panel-info">
+        <div class="chat-user panel-heading">Chat</div>
+        <div class="chat-msg panel-body">
+          <div class="msg">
+            <span class="label label-info from-user">XYZjsdjds</span>
+            <span class="text"> Hey wjqjw sdjjd s dsk sk dsk sdk sdkj jdsjd js jdjsd jsd js djdsjssdksd ksd ksd </span>
+          </div>
+          <div class="msg">
+            <span class="label label-info from-user">Me</span>
+            <span class="text"> Hey wjqjw sdjjd s dsk sk </span>
+          </div>
+        </div>
+        <input type="text" class="input-box form-control" />
+      </div>
     </div>
   </div>
   <div id="video-bottom-container">
