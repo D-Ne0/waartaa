@@ -49,3 +49,6 @@
 /crypto-base
 /blaze-layout
 /jquery-titlealert
+/iron-layout
+/iron-core
+/iron-dynamic-template
