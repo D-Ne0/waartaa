@@ -18,20 +18,20 @@
         {{ showHangupButton }}
       </div>
       <div style="clear:both"></div>
-      <div id="video-chat-text-chat" class="panel panel-info">
-        <div class="chat-user panel-heading">Chat</div>
-        <div class="chat-msg panel-body">
-          <div class="msg">
-            <span class="label label-info from-user">XYZjsdjds</span>
-            <span class="text"> Hey wjqjw sdjjd s dsk sk dsk sdk sdkj jdsjd js jdjsd jsd js djdsjssdksd ksd ksd </span>
+      {{# if showTextChat }}
+        <div id="video-chat-text-chat" class="panel panel-info">
+          <div class="chat-user panel-heading">Chat</div>
+          <div class="chat-msg panel-body">
+            {{#each videoTextChatMsgs }}
+              <div class="msg">
+                <span class="label label-info from-user">{{from}}</span>
+                <span class="text">{{text}}</span>
+              </div>
+            {{/each}}
           </div>
-          <div class="msg">
-            <span class="label label-info from-user">Me</span>
-            <span class="text"> Hey wjqjw sdjjd s dsk sk </span>
-          </div>
+          <input type="text" class="input-box form-control" />
         </div>
-        <input type="text" class="input-box form-control" />
-      </div>
+      {{/if}}
     </div>
   </div>
   <div id="video-bottom-container">
