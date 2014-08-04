@@ -40,6 +40,26 @@ Template.video_chat.helpers({
     }
   },
 
+  showTextChat: function () {
+    var id = Session.get('otherEasyrtcId');
+    if (id) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+
+  videoTextChatMsgs: function () {
+    var id = Session.get('otherEasyrtcId');
+    if (id) {
+      var msgs = Session.get('videoTextChatMsgs');
+      if (msgs && msgs[id]) {
+        return msgs[id];
+      }
+    }
+    return [];
+  },
+
   isCameraEnabled: function () {
     return Session.get('cameraEnabled') ? 'checked' : '';
   }
@@ -55,5 +75,13 @@ Template.video_chat.events({
     var enable = $(e.target).prop('checked');
     easyrtc.enableCamera(enable);
     Session.set('cameraEnabled', enable);
+  },
+
+  'keydown #video-chat-text-chat .input-box': function (e) {
+    if (e.keyCode == 13) {
+      var destUserId = Session.get('otherEasyrtcId');
+      var msg = $('#video-chat-text-chat .input-box').val();
+      VideoChat.sendChatMsg(destUserId, msg);
+    }
   }
 });

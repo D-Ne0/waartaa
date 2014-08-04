@@ -117,6 +117,31 @@ VideoChat = (function () {
     }
   };
 
+  var saveNewMsgInSession = function (id, username, msg) {
+    var msgs = Session.get('videoTextChatMsgs');
+    if (!msgs) {
+      msgs = {};
+    }
+    if (!msgs[id]) {
+      msgs[id] = [];
+    }
+    msgs[id].push({
+      'from': username,
+      'text': msg
+    });
+    Session.set('videoTextChatMsgs', msgs);
+  };
+
+  var peerListener = function (id, msgType, msgData, targeting) {
+    if (id == Session.get('otherEasyrtcId') && msgType == 'chat') {
+      var username = self.remoteUsername();
+      saveNewMsgInSession(id, username, msgData);
+      Meteor.setTimeout(function () {
+        $('.chat-msg').animate({scrollTop: $('.chat-msg').prop('scrollHeight')}, 500);
+      }, 100);
+    }
+  };
+
   var self = {
     haveSelfVideo: false,
 
@@ -157,6 +182,7 @@ VideoChat = (function () {
       easyrtc.setStreamAcceptor(streamAcceptor);
       easyrtc.setOnStreamClosed(onStreamClosed);
       easyrtc.setVideoDims(640, 480);
+      easyrtc.setPeerListener(peerListener, 'chat');
     },
 
     performCall: function (otherEasyrtcId) {
@@ -257,6 +283,21 @@ VideoChat = (function () {
 
     disconnect: function () {
       easyrtc.disconnect();
+    },
+
+    sendChatMsg: function (destUserId, msg) {
+      var msg = msg.trim();
+      if (msg.length > 0 && destUserId) {
+        easyrtc.sendDataWS(destUserId, 'chat', msg, function (ackMsg) {
+          if (ackMsg.msgType == 'ack') {
+            saveNewMsgInSession(destUserId, 'Me', msg);
+            Meteor.setTimeout(function () {
+              $('.input-box').val('');
+              $('.chat-msg').animate({scrollTop: $('.chat-msg').prop('scrollHeight')}, 500);
+            }, 100);
+          }
+        });
+      }
     }
   };
 
