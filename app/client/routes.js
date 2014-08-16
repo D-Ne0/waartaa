@@ -104,7 +104,8 @@ Router.map(function () {
         Meteor.subscribe('servers'),
         Meteor.subscribe('user_servers'),
         Meteor.subscribe('user_channels'),
-        Meteor.subscribe('bookmarks')
+        Meteor.subscribe('bookmarks'),
+        Meteor.subscribe('user')
       ]
     },
     onAfterAction: function () {

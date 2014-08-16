@@ -86,10 +86,3 @@ Deps.autorun(function () {
   var currentRoom = Session.get('room');
   hideDrawers();
 })
-
-/* Init video chat */
-$(document).ready(function () {
-  VideoChat.init({
-    'socketUrl': '//localhost:8080'
-  });
-});
