@@ -40,8 +40,8 @@
       },
       "presence": {
         "git": "https://github.com/dburles/meteor-presence.git",
-        "tag": "v0.4.6",
-        "commit": "7acef78e008bf967c9b2e831c968a6618a92a90a"
+        "tag": "v0.4.8",
+        "commit": "91e24bd3197ab5d86e39f38daa46193ef419aad2"
       },
       "bootstrap-3": {
         "git": "https://github.com/mangasocial/meteor-bootstrap-3.git",
@@ -55,8 +55,8 @@
       },
       "moment": {
         "git": "https://github.com/acreeger/meteor-moment.git",
-        "tag": "v2.6.0",
-        "commit": "26156df681750fd6e6ed77043eef32b6653ebbdf"
+        "tag": "v2.8.1",
+        "commit": "722ea63783d594341023836b7d418ab2567dab8c"
       },
       "winston-loggly": {
         "git": "https://github.com/tomrogers3/meteor-winston-loggly.git",
@@ -85,8 +85,8 @@
       },
       "fast-render": {
         "git": "https://github.com/arunoda/meteor-fast-render.git",
-        "tag": "v0.2.8",
-        "commit": "149984b1aff3a5642a270aff9bd9006872c8302e"
+        "tag": "v1.0.0",
+        "commit": "acbc04982025fe78cebb8865b5a04689741d4b0b"
       },
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
@@ -130,8 +130,8 @@
       },
       "accounts-ui-bootstrap-3": {
         "git": "https://github.com/mangasocial/meteor-accounts-ui-bootstrap-3.git",
-        "tag": "v0.3.3",
-        "commit": "2e50b605d8d5ed68e48c4529a65f13552d8af3f9"
+        "tag": "v0.3.4",
+        "commit": "9f006ee48d869877d90d54ac75b54550a587df8f"
       },
       "chosen-package": {
         "git": "https://github.com/Ore4444/chosen-package.git",
@@ -140,8 +140,8 @@
       },
       "roles": {
         "git": "https://github.com/alanning/meteor-roles.git",
-        "tag": "v1.2.10",
-        "commit": "7ccb35de0a6cb0c9a0c3666badd04757e39c09a6"
+        "tag": "v1.2.11",
+        "commit": "2d7dc91848ec874d3a0852c77f462d0fae749de5"
       },
       "houston": {
         "git": "https://github.com/gterrono/houston.git",
@@ -185,8 +185,8 @@
       },
       "spin": {
         "git": "https://github.com/SachaG/meteor-spin.git",
-        "tag": "v2.0.3",
-        "commit": "23c1145472a710d5c93fa4beaca4e576caeb2f24"
+        "tag": "v2.0.4",
+        "commit": "f7b1e12a7caff1283cdb3671a393c182d0ae9862"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
