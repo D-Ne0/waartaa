@@ -163,6 +163,20 @@ Router.map(function () {
     fastRender: true
   });
 
+  this.route('admin', {
+    path: /^\/admin$/,
+    onBeforeAction: function () {
+      Router.go('/admin/nick-status/');
+    }
+  });
+
+  this.route('admin/', {
+    path: /^\/admin\/$/,
+    onBeforeAction: function () {
+      Router.go('/admin/nick-status/');
+    }
+  });
+
   this.route('admin-nick-status', {
     path: /^\/admin\/nick-status$/,
     onBeforeAction: function () {
