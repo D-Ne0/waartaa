@@ -3,8 +3,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-  <script src="//localhost:8080/socket.io/socket.io.js"></script>
-  <script type="text/javascript" src="//localhost:8080/easyrtc/easyrtc.js"></script>
 </head>
 
 <template name="layout">
@@ -22,6 +20,8 @@
 </template>
 
 <template name="header">
+  <script src="{{video_chat_host}}/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="{{video_chat_host}}/easyrtc/easyrtc.js"></script>
   <nav id="global-navbar" class="navbar navbar-fixed-top waartaa-navbar" role="navigation">
     <div class="container">
       <div class="navbar-header">

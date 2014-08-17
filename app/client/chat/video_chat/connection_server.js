@@ -19,6 +19,10 @@ Template.video_chat_connection_server.helpers({
 
 Template.video_chat_connection_server.rendered = function () {
   VideoChat.init({
-    'socketUrl': '//localhost:8080'
+    'socketUrl': Meteor.settings.public.video_chat_server
   });
 };
+
+UI.registerHelper('video_chat_host', function () {
+    return Meteor.settings.public.video_chat_server;
+});
